@@ -18,14 +18,16 @@ Original
 */
 window.addEventListener("load", function () {
   video.autoplay = false;
+  video.pause();
   video.loop = false;
-  document.querySelector("#volume").textContent = video.volume * 100;
+  //document.querySelector("#volume").textContent = video.volume * 100;
 });
 
 document.querySelector("#play").addEventListener("click", function () {
   video.play();
   video.volume = 0.5;
   document.querySelector("#volume").textContent = video.volume * 100;
+  document.querySelector("#volume").textContent += "%";
   document.querySelector("#volume").value = 50;
 });
 
@@ -61,6 +63,7 @@ document.querySelector("#mute").addEventListener("click", function () {
 document.querySelector("#slider").addEventListener("input", function () {
   video.volume = this.value / 100;
   document.querySelector("#volume").textContent = video.volume * 100;
+  document.querySelector("#volume").textContent += "%";
 });
 
 document.querySelector("#vintage").addEventListener("click", function () {
