@@ -10,7 +10,7 @@ Volume Slider
 
 
 
-
+<script src="js/video.js"></script>
 Styled
 Original
 
@@ -18,8 +18,8 @@ Original
 */
 window.addEventListener("load", function () {
   video.autoplay = false;
-  video.pause();
   video.loop = false;
+  document.querySelector("#volume").textContent = video.volume * 100;
 });
 
 document.querySelector("#play").addEventListener("click", function () {
